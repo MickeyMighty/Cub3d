@@ -1,0 +1,18 @@
+R 2560 1440
+NO textures/wall/jail.xpm
+SO textures/wall/stone.xpm
+WE textures/wall/wood.xpm
+EA textures/wall/mossy.xpm
+S textures/sprite/mickey.xpm
+F 141,101,0
+C 237,254,255
+
+1111111
+1000001
+1000001
+1000001
+1000001
+1000001
+100N001
+1000000
+1111111
