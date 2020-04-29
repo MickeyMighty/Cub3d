@@ -6,7 +6,7 @@
 /*   By: loamar <loamar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/09 23:40:36 by loamar            #+#    #+#             */
-/*   Updated: 2020/03/07 00:14:14 by loamar           ###   ########.fr       */
+/*   Updated: 2020/04/29 11:37:30 by lorenzoamar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -213,11 +213,4 @@ int		Error_msg(void)
 	ft_putstr_fd("Error with Parsing", 2);
 	exit(EXIT_FAILURE);
 	return (0);
-}
-
-int		on_exit(t_cub3d *cub)
-{
-	free_cub(cub);
-	exit(0);
-	return (1);
 }

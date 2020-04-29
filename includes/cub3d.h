@@ -6,7 +6,7 @@
 /*   By: loamar <loamar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/09 23:43:14 by loamar            #+#    #+#             */
-/*   Updated: 2020/04/20 10:41:38 by lorenzoamar      ###   ########.fr       */
+/*   Updated: 2020/04/29 11:37:37 by lorenzoamar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -529,7 +529,7 @@ int 		get_text(t_cub3d *cub);
 // int				ft_error_player(t_player *player, char *msg);
 // int				ft_error_image(t_draw *img, char *msg);
 int 	ft_error(t_cub3d *cub, char *msg);
-int		on_exit(t_cub3d *cub);
+// int		on_exit(t_cub3d *cub);
 
 /*
 ** free.c
