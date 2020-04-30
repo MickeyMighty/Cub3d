@@ -6,7 +6,7 @@
 /*   By: loamar <loamar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/09 23:40:36 by loamar            #+#    #+#             */
-/*   Updated: 2020/04/30 16:32:24 by lorenzoamar      ###   ########.fr       */
+/*   Updated: 2020/04/30 17:02:15 by lorenzoamar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -191,22 +191,22 @@ int		ft_error(t_cub3d *cub, char *msg)
 	return (0);
 }
 
-static void		free_cub(t_cub3d *cub)
-{
-	if (cub)
-	{
-		// if (cub->map)
-		// 	free(cub->map);
-		// if (cub->game)
-		// 	free(cub->game);
-		// if (cub->player)
-		// 	free(cub->player);
-		// if (cub->img)
-		// 	free(cub->img);
-		free(cub);
-		//map = NULL;
-	}
-}
+// static void		free_cub(t_cub3d *cub)
+// {
+// 	if (cub)
+// 	{
+// 		// if (cub->map)
+// 		// 	free(cub->map);
+// 		// if (cub->game)
+// 		// 	free(cub->game);
+// 		// if (cub->player)
+// 		// 	free(cub->player);
+// 		// if (cub->img)
+// 		// 	free(cub->img);
+// 		free(cub);
+// 		//map = NULL;
+// 	}
+// }
 
 int		Error_msg(void)
 {
