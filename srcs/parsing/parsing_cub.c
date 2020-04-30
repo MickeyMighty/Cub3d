@@ -6,7 +6,7 @@
 /*   By: loamar <loamar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 15:26:19 by loamar            #+#    #+#             */
-/*   Updated: 2020/04/30 16:54:17 by lorenzoamar      ###   ########.fr       */
+/*   Updated: 2020/04/30 16:55:21 by lorenzoamar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ static int		ft_nbrlen(long long value, int base)
 	int		len;
 	// int		neg;
 
-	neg = 0;
+	// neg = 0;
 	len = 1;
 	if (value < 0)
 	{
