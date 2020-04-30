@@ -6,7 +6,7 @@
 /*   By: loamar <loamar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/09 23:43:14 by loamar            #+#    #+#             */
-/*   Updated: 2020/04/29 11:37:37 by lorenzoamar      ###   ########.fr       */
+/*   Updated: 2020/04/29 19:15:18 by lorenzoamar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include "../lib/libft/libft.h"
 # include <stdlib.h>
 # include <unistd.h>
-// # include "../lib/mlx/ mlx.h"
+# include "../lib/mlx/mlx.h"
 # include <fcntl.h>
 # include <stdio.h>
 # include <limits.h>
