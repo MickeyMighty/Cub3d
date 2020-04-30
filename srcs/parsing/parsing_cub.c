@@ -6,7 +6,7 @@
 /*   By: loamar <loamar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 15:26:19 by loamar            #+#    #+#             */
-/*   Updated: 2020/03/11 22:41:31 by loamar           ###   ########.fr       */
+/*   Updated: 2020/04/30 16:54:17 by lorenzoamar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ static int		fill_map(t_map *map, char *str_cub, int index)
 static int		ft_nbrlen(long long value, int base)
 {
 	int		len;
-	int		neg;
+	// int		neg;
 
 	neg = 0;
 	len = 1;
