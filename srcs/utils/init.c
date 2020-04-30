@@ -6,7 +6,7 @@
 /*   By: loamar <loamar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/14 20:11:09 by loamar            #+#    #+#             */
-/*   Updated: 2020/03/13 04:08:09 by loamar           ###   ########.fr       */
+/*   Updated: 2020/04/30 17:04:40 by lorenzoamar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,14 +59,14 @@ int	 	init_player(t_player *player, t_map *map)
 	player->move_speed = 0;
 	if (!(player->tex_x = (int *)malloc(sizeof(int) * (map->res_x))))
 		return (0);
-    if (!(player->distances = (float *)malloc(sizeof(float) * (map->res_x))))
-        return (0);
-    if (!(player->sides = (int *)malloc(sizeof(int) * (map->res_x))))
-        return (0);
-    if (!(player->hit_wall_x = (float *)malloc(sizeof(float) * (map->res_x))))
-        return (0);
-    if (!(player->hit_sprite_x = (float *)malloc(sizeof(float) * (map->res_x))))
-        return (0);
+  if (!(player->distances = (float *)malloc(sizeof(float) * (map->res_x))))
+      return (0);
+  if (!(player->sides = (int *)malloc(sizeof(int) * (map->res_x))))
+      return (0);
+  if (!(player->hit_wall_x = (float *)malloc(sizeof(float) * (map->res_x))))
+      return (0);
+  if (!(player->hit_sprite_x = (float *)malloc(sizeof(float) * (map->res_x))))
+      return (0);
 	return (1);
 }
 
