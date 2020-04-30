@@ -6,7 +6,7 @@
 /*   By: loamar <loamar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/24 15:13:48 by loamar            #+#    #+#             */
-/*   Updated: 2020/03/11 03:33:49 by loamar           ###   ########.fr       */
+/*   Updated: 2020/04/30 16:59:10 by lorenzoamar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,10 @@ static int 		get_last_order(t_sprite *sprites)
 void		get_sprites(t_cub3d *cub, int column)
 {
 	t_sprite	*sprite2;
-	int			i;
+	// int			i;
 
 	sprite2 = cub->sprites;
-	i = 0;
+	// i = 0;
 	while (sprite2)
 	{
 		if (cub->player->map_x == (int)sprite2->pos_x && cub->player->map_y == (int)sprite2->pos_y)
