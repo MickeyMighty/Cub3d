@@ -6,7 +6,7 @@
 #    By: loamar <loamar@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/04 16:46:41 by loamar            #+#    #+#              #
-#    Updated: 2020/04/30 16:44:55 by lorenzoamar      ###   ########.fr        #
+#    Updated: 2020/05/02 17:58:45 by lorenzoamar      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,14 +30,15 @@ RM				= rm -f
 #CFLAGS			= -g3 -fsanitize=address -I.
 #CFLAGS			= -g -O3 -Wall -Wextra -Werror -I.
 CFLAGS			= -g -O3 -Wall -Wextra -Werror -g3 -fsanitize=address -I.
-CFLAGS 			= -I ./mlx_vm/ -Wall -Werror -Wextra -lm -lbsd -lX11 -lXext
 #CFLAGS			= -g -O3 -g3 -fsanitize=address -I.
 
 LIBFT			=  lib/libft/libft.a
 
-MLX				=  lib/mlx/libmlx.dylib
+MLX				=  lib/minilibx-linux/libmlx.a
+# MLX				=  lib/mlx/libmlx.dylib
 
-LIBS			= -Lmlx -lmlx -framework OpenGL -framework AppKit -L
+LIBS			= -lm -lbsd -lX11 -lXext
+# LIBS			= -Lmlx -lmlx -framework OpenGL -framework AppKit -L
 
 SRCS			= 	./srcs/cub3d.c \
 					./srcs/parsing/parsing_cub.c \
@@ -62,12 +63,12 @@ OBJS			= $(SRCS:.c=.o)
 
 #NAME			= cub3D
 
-NB = $(words $(SRC))
-NB3 = $(shell echo $$(( $(NB) + 1)))
+# NB = $(words $(SRC))
+# NB3 = $(shell echo $$(( $(NB) + 1)))
 
-I =     0
-K = 0
-J =     0
+# I =     0
+# K = 0
+# J =     0
 
 all:			$(NAME)
 
@@ -83,9 +84,10 @@ $(NAME):		$(OBJS)
 #$(MLX):
 
 clean:
-				$(MAKE) -C lib/mlx clean
+				$(MAKE) -C lib/minilibx-linux clean
 				$(RM) $(OBJS) $(BONUS_OBJS)
 				make clean -C lib/libft
+				# $(MAKE) -C lib/mlx clean
 
 fclean:			clean
 				$(RM) $(NAME) $(MLX) $(LIBFT)
