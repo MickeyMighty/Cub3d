@@ -6,7 +6,7 @@
 #    By: loamar <loamar@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/04 16:46:41 by loamar            #+#    #+#              #
-#    Updated: 2020/05/02 17:58:45 by lorenzoamar      ###   ########.fr        #
+#    Updated: 2020/05/03 14:01:14 by lorenzoamar      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ WHITE = \033[1m
 
 NAME 			= cub3d
 
-CC				= gcc
+CC				= clang
 
 RM				= rm -f
 
