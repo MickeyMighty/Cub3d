@@ -6,7 +6,7 @@
 #    By: loamar <loamar@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/04 16:46:41 by loamar            #+#    #+#              #
-#    Updated: 2020/05/13 15:25:41 by lorenzoamar      ###   ########.fr        #
+#    Updated: 2020/05/13 15:27:06 by lorenzoamar      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,6 +77,7 @@ all:			$(NAME)
 $(NAME):		$(OBJS)
 
 				make -C lib/libft
+				make -C lib/minilibx-linux
 				${CFLAGS} -o ${NAME} ${OBJS} ${LIBFT} ${LIBS}
 				#@cp lib/libft/libft.a $(NAME)
 				#@mkdir OBJS
@@ -88,7 +89,7 @@ clean:
 				$(MAKE) -C lib/minilibx-linux clean
 				$(RM) $(OBJS) $(BONUS_OBJS)
 				make clean -C lib/libft
-				rm -f $(NAME) $(OBJ) *~ core *.core
+				make clean -C lib/minilibx-linux
 				# $(MAKE) -C lib/mlx clean
 
 fclean:			clean
