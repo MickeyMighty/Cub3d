@@ -6,7 +6,7 @@
 #    By: loamar <loamar@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/04 16:46:41 by loamar            #+#    #+#              #
-#    Updated: 2020/05/13 14:54:41 by lorenzoamar      ###   ########.fr        #
+#    Updated: 2020/05/13 15:24:42 by lorenzoamar      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -88,6 +88,7 @@ clean:
 				$(MAKE) -C lib/minilibx-linux clean
 				$(RM) $(OBJS) $(BONUS_OBJS)
 				make clean -C lib/libft
+				rm -f $(NAME) $(OBJ) *~ core *.core
 				# $(MAKE) -C lib/mlx clean
 
 fclean:			clean
