@@ -6,14 +6,13 @@
 /*   By: loamar <loamar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/09 23:43:14 by loamar            #+#    #+#             */
-/*   Updated: 2020/04/29 19:15:18 by lorenzoamar      ###   ########.fr       */
+/*   Updated: 2020/05/12 18:49:56 by lorenzoamar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CUB3D_H
 # define CUB3D_H
 
-#  define BUFFER_SIZE 32
 # include "../lib/libft/libft.h"
 # include <stdlib.h>
 # include <unistd.h>
