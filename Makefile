@@ -6,7 +6,7 @@
 #    By: loamar <loamar@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/04 16:46:41 by loamar            #+#    #+#              #
-#    Updated: 2020/05/13 15:24:42 by lorenzoamar      ###   ########.fr        #
+#    Updated: 2020/05/13 15:25:41 by lorenzoamar      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,7 +77,7 @@ all:			$(NAME)
 $(NAME):		$(OBJS)
 
 				make -C lib/libft
-				gcc ${CFLAGS} -o ${NAME} ${OBJS} ${LIBFT} ${LIBS}
+				${CFLAGS} -o ${NAME} ${OBJS} ${LIBFT} ${LIBS}
 				#@cp lib/libft/libft.a $(NAME)
 				#@mkdir OBJS
 
