@@ -6,7 +6,7 @@
 #    By: loamar <loamar@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/04 16:46:41 by loamar            #+#    #+#              #
-#    Updated: 2020/05/13 12:15:30 by lorenzoamar      ###   ########.fr        #
+#    Updated: 2020/05/13 12:21:47 by lorenzoamar      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ RM				= rm -f
 
 #CFLAGS			= -g3 -fsanitize=address -I.
 #CFLAGS			= -g -O3 -Wall -Wextra -Werror -I.
-CFLAGS			= -g -O3 -Wall -Wextra -Werror -g3 -fsanitize=address -I.
+#CFLAGS			= -g -O3 -Wall -Wextra -Werror -g3 -fsanitize=address -I.
 CFLAGS			= $(CC) -o $(NAME) $(OBJ) -L.. -lmlx -L$(INCLIB) -lXext -lX11 -lm -lbsd
 #CFLAGS			= -g -O3 -g3 -fsanitize=address -I.
 
