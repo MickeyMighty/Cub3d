@@ -6,7 +6,7 @@
 /*   By: loamar <loamar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/29 16:24:04 by loamar            #+#    #+#             */
-/*   Updated: 2020/03/03 18:41:32 by loamar           ###   ########.fr       */
+/*   Updated: 2020/06/08 14:21:20 by loamar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ typedef struct		s_num
 }					t_num;
 
 void				ft_memdel(void **ap);
-int				    ft_max(int a, int b);
-int				    ft_min(int a, int b);
+int					ft_max(int a, int b);
+int					ft_min(int a, int b);
 char				*ft_newstr(size_t size);
 char				*ft_strcpy(char *dest, const char *src);
 char				*ft_ltohex_spe(long num);

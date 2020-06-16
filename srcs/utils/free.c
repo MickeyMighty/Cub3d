@@ -6,84 +6,65 @@
 /*   By: loamar <loamar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 12:37:28 by loamar            #+#    #+#             */
-/*   Updated: 2020/03/06 01:46:39 by loamar           ###   ########.fr       */
+/*   Updated: 2020/06/15 18:24:35 by loamar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d.h"
 
-void    free_split(char **str)
+void	free_split(char **str)
 {
-    int     index;
+	int		index;
 
-    index = 0;
-    while (str[index])
-    {
-        free(str[index]);
-        index++;
-    }
-    free(str);
+	index = 0;
+	while (str[index])
+	{
+		free(str[index]);
+		index++;
+	}
+	free(str);
 }
 
-// void		free_sprites(t_game *g)
-// {
-// 	t_sprite *tmp;
-//
-// 	while (g->sprites)
-// 	{
-// 		tmp = g->sprites->next;
-// 		if (g->sprites)
-// 			free(g->sprites);
-// 		g->sprites = tmp;
-// 	}
-// }
-// //
-// void		free_map(t_game *g)
-// {
-// 	int y;
-//
-// 	y = -1;
-// 	while (g->map && ++y < g->map_y_len)
-// 		ft_strdel(&g->map[y]);
-// 	if (g->map && g->map_y_len)
-// 		free(g->map);
-// }
+void	free_tab_int(int **tab, int size)
+{
+	int		i;
 
-// void		free_textures(t_game *g)
-// {
-// 	int i;
-//
-// 	i = -1;
-// 	while (i < 5)
-// 	{
-// 		ft_memdel((void *)&g->path_textures[i]);
-// 		ft_memdel((void *)&g->data_textures[i]);
-// 		ft_memdel((void *)&g->xpm_to_img[i++]);
-// 	}
-// }
-//
-// void		free_g(t_game *g)
-// {
-// 	ft_strdel(&g->buffer);
-// 	free_map(g);
-// 	if (g->x_len_for_y)
-// 		free(g->x_len_for_y);
-// 	ft_memdel((void *)&g->mlx_init_ret);
-// 	ft_memdel((void *)&g->mlx_new_win_ret);
-// 	ft_memdel((void *)&g->mlx_new_img_ret);
-// 	ft_memdel((void *)&g->img_buffer);
-// 	ft_memdel((void *)&g->distances);
-// 	ft_memdel((void *)&g->sides);
-// 	ft_memdel((void *)&g->hit_wall_x);
-// 	ft_memdel((void *)&g->tex_x);
-// 	free_sprites(g);
-// }
+	i = 0;
+	while (i < size)
+	{
+		free(tab[i]);
+		i++;
+	}
+	free(tab);
+}
 
-// int			handle_error(t_game *g, char *error_msg)
-// {
-// 	ft_putstr_fd("Error\n", 2);
-// 	ft_putstr_fd(error_msg, 2);
-// 	if (g)
-// 		free_g(g);
-// 	return (0);
-// }
+void	free_sprite(t_cub3d *cub)
+{
+	t_sprite *next;
+
+	while (cub->sprites->next)
+	{
+		next = cub->sprites->next;
+		if (cub->sprites)
+			free(cub->sprites);
+		cub->sprites = next;
+	}
+	free(cub->sprites);
+}
+
+void	free_game(t_cub3d *cub, int error)
+{
+	if (error == 2 || error == 3 || error == 4)
+		free(cub->game);
+	else
+	{
+		if (cub->game->img_ptr)
+			mlx_destroy_image(cub->game->mlx_ptr, cub->game->img_ptr);
+		if (cub->game->win_ptr)
+		{
+			mlx_clear_window(cub->game->mlx_ptr, cub->game->win_ptr);
+			mlx_destroy_window(cub->game->mlx_ptr, cub->game->win_ptr);
+		}
+		free(cub->game);
+	}
+}

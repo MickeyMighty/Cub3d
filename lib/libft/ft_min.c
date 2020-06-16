@@ -6,13 +6,13 @@
 /*   By: loamar <loamar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/13 13:34:29 by loamar            #+#    #+#             */
-/*   Updated: 2020/03/11 03:21:05 by loamar           ###   ########.fr       */
+/*   Updated: 2020/06/08 14:09:34 by loamar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int     ft_min(int a, int b)
+int		ft_min(int a, int b)
 {
-    return (a < b ? a : b);
+	return (a < b ? a : b);
 }

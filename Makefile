@@ -6,20 +6,9 @@
 #    By: loamar <loamar@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/04 16:46:41 by loamar            #+#    #+#              #
-#    Updated: 2020/05/13 15:27:06 by lorenzoamar      ###   ########.fr        #
+#    Updated: 2020/06/16 03:03:30 by loamar           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
-RED =   \033[0;31m
-BRED =  \033[1;31m
-GREEN = \033[0;32m
-BGREE = \033[1;32m
-YELLOW =\033[0;33m
-BLUE =  \033[0;34m
-PINK =  \033[0;35m
-CYAN =  \033[0;36m
-RESET = \033[0m
-WHITE = \033[1m
 
 NAME 			= cub3d
 
@@ -27,19 +16,13 @@ CC				= gcc
 
 RM				= rm -f
 
-#CFLAGS			= -g3 -fsanitize=address -I.
-#CFLAGS			= -g -O3 -Wall -Wextra -Werror -I.
-#CFLAGS			= -g -O3 -Wall -Wextra -Werror -g3 -fsanitize=address -I.
-CFLAGS			= $(CC) -o $(NAME) $(OBJ) -L.. -lmlx -L$(INCLIB) -lXext -lX11 -lm -lbsd
-#CFLAGS			= -g -O3 -g3 -fsanitize=address -I.
+CFLAGS			= -Wall -Wextra -Werror -I.
 
 LIBFT			=  lib/libft/libft.a
 
-MLX				=  lib/minilibx-linux/libmlx.a
-# MLX				=  lib/mlx/libmlx.dylib
-
-LIBS			= -lm -lbsd -lX11 -lXext
-# LIBS			= -Lmlx -lmlx -framework OpenGL -framework AppKit -L
+LIB_LINUX		= -I/usr/local/include -L/usr/local/lib -lmlx -L/usr/include -lm -lbsd -lX11 -lXext
+LIB_MAC			= -I/usr/local/include -L/usr/local/lib -lmlx -framework OpenGL -framework AppKit
+LIBS			= $(LIB_MAC)
 
 SRCS			= 	./srcs/cub3d.c \
 					./srcs/parsing/parsing_cub.c \
@@ -47,53 +30,36 @@ SRCS			= 	./srcs/cub3d.c \
 					./srcs/parsing/parsutils.c \
 					./srcs/parsing/check_cub.c \
 					./srcs/parsing/check_map.c \
-					./srcs/raycasting.c \
-					./srcs/draw.c \
-					./srcs/key.c \
-					./srcs/move.c \
+					./srcs/parsing/get_pos.c \
+					./srcs/raycasting/raycasting.c \
+					./srcs/visual/draw.c \
+					./srcs/displacements/key.c \
+					./srcs/displacements/move.c \
 					./srcs/sprite/sprite.c \
 					./srcs/sprite/draw_sprite.c \
 					./srcs/utils/error.c \
 					./srcs/utils/free.c \
 					./srcs/utils/check.c \
 					./srcs/utils/init.c \
-					./srcs/textures.c \
-					./srcs/bmp.c
+					./srcs/utils/init2.c \
+					./srcs/visual/textures.c \
+					./srcs/visual/bmp.c
 
 OBJS			= $(SRCS:.c=.o)
-
-#NAME			= cub3D
-
-# NB = $(words $(SRC))
-# NB3 = $(shell echo $$(( $(NB) + 1)))
-
-# I =     0
-# K = 0
-# J =     0
 
 all:			$(NAME)
 
 
 $(NAME):		$(OBJS)
-
 				make -C lib/libft
-				make -C lib/minilibx-linux
-				${CFLAGS} -o ${NAME} ${OBJS} ${LIBFT} ${LIBS}
-				#@cp lib/libft/libft.a $(NAME)
-				#@mkdir OBJS
-
-
-#$(MLX):
+				gcc ${CFLAGS} -o ${NAME} ${OBJS} ${LIBFT} ${LIBS}
 
 clean:
-				$(MAKE) -C lib/minilibx-linux clean
 				$(RM) $(OBJS) $(BONUS_OBJS)
 				make clean -C lib/libft
-				make clean -C lib/minilibx-linux
-				# $(MAKE) -C lib/mlx clean
 
 fclean:			clean
-				$(RM) $(NAME) $(MLX) $(LIBFT)
+				$(RM) $(NAME) $(LIBFT)
 
 re:				fclean $(NAME)
 

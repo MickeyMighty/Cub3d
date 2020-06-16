@@ -6,13 +6,13 @@
 /*   By: loamar <loamar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/24 15:13:48 by loamar            #+#    #+#             */
-/*   Updated: 2020/04/30 16:59:10 by lorenzoamar      ###   ########.fr       */
+/*   Updated: 2020/06/16 02:40:00 by loamar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d.h"
 
-static int 		get_last_order(t_sprite *sprites)
+int				get_last_order(t_sprite *sprites)
 {
 	t_sprite	*sprite2;
 	int			order;
@@ -26,34 +26,6 @@ static int 		get_last_order(t_sprite *sprites)
 		sprite2 = sprite2->next;
 	}
 	return (order + 1);
-}
-
-void		get_sprites(t_cub3d *cub, int column)
-{
-	t_sprite	*sprite2;
-	// int			i;
-
-	sprite2 = cub->sprites;
-	// i = 0;
-	while (sprite2)
-	{
-		if (cub->player->map_x == (int)sprite2->pos_x && cub->player->map_y == (int)sprite2->pos_y)
-		{
-			if (sprite2->order == 0)
-			{
-				sprite2->first_hit = column;
-				sprite2->distance =
-				(sprite2->pos_x - cub->player->pos_x)
-				* (sprite2->pos_x - cub->player->pos_x)
-				+ (sprite2->pos_y - cub->player->pos_y)
-				* (sprite2->pos_y - cub->player->pos_y);
-				sprite2->order = get_last_order(cub->sprites);
-			}
-			else
-				sprite2->last_hit = column;
-		}
-		sprite2 = sprite2->next;
-	}
 }
 
 static void		push_distance(t_cub3d *cub, t_sprite *new_s)
@@ -80,7 +52,7 @@ static void		push_distance(t_cub3d *cub, t_sprite *new_s)
 	prev_s->next = new_s;
 }
 
-static int			sort_and_add_sprite(t_cub3d *cub, int x, int y)
+static int		sort_and_add_sprite(t_cub3d *cub, int x, int y)
 {
 	t_sprite *new_s;
 
@@ -88,7 +60,8 @@ static int			sort_and_add_sprite(t_cub3d *cub, int x, int y)
 		return (0);
 	new_s->pos_x = x + 0.5;
 	new_s->pos_y = y + 0.5;
-	new_s->distance = ((x + 0.5) - cub->player->pos_x) * ((x + 0.5) - cub->player->pos_x)
+	new_s->distance = ((x + 0.5) - cub->player->pos_x) *
+	((x + 0.5) - cub->player->pos_x)
 	+ ((y + 0.5) - cub->player->pos_y) * ((y + 0.5) - cub->player->pos_y);
 	new_s->next = NULL;
 	new_s->order = 0;
@@ -99,10 +72,10 @@ static int			sort_and_add_sprite(t_cub3d *cub, int x, int y)
 	return (1);
 }
 
-static int			parse_sprites(t_cub3d  *cub)
+static int		parse_sprites(t_cub3d *cub)
 {
-	int x;
-	int y;
+	int		x;
+	int		y;
 
 	y = 0;
 	while (y < cub->map->size_y)
@@ -119,12 +92,9 @@ static int			parse_sprites(t_cub3d  *cub)
 	return (1);
 }
 
-int			detect_sprites(t_cub3d  *cub)
+int				detect_sprites(t_cub3d *cub)
 {
-	int		nb_sprite;
-
-	nb_sprite = 0;
-	if (nb_sprite == cub->map->nb_sprites)
+	if (cub->map->nb_sprites == 0)
 		return (1);
 	return (parse_sprites(cub));
 }
