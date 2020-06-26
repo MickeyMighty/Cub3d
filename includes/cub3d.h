@@ -6,7 +6,7 @@
 /*   By: loamar <loamar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/09 23:43:14 by loamar            #+#    #+#             */
-/*   Updated: 2020/06/16 03:01:46 by loamar           ###   ########.fr       */
+/*   Updated: 2020/06/27 01:57:54 by lorenzoamar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -418,7 +418,7 @@ int							detect_sprites(t_cub3d *cub);
 */
 
 int							check_arg(int argc, char **argv);
-int							on_exit(t_cub3d *cub);
+int							cub3d_exit(t_cub3d *cub);
 void						error_msg(int error, char *msg);
 
 /*

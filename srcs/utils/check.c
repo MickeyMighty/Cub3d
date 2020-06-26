@@ -6,7 +6,7 @@
 /*   By: loamar <loamar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/07 17:51:34 by loamar            #+#    #+#             */
-/*   Updated: 2020/06/16 03:02:21 by loamar           ###   ########.fr       */
+/*   Updated: 2020/06/27 01:57:44 by lorenzoamar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int		check_arg(int argc, char **argv)
 		return (0);
 }
 
-int		on_exit(t_cub3d *cub)
+int		cub3d_exit(t_cub3d *cub)
 {
 	ft_error(cub, "", 0);
 	return (1);
