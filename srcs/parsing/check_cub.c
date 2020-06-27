@@ -6,7 +6,7 @@
 /*   By: loamar <loamar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/07 11:45:06 by loamar            #+#    #+#             */
-/*   Updated: 2020/06/12 23:47:59 by loamar           ###   ########.fr       */
+/*   Updated: 2020/06/27 02:03:05 by lorenzoamar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,6 @@ int		check_map_param(char *str_cub, int index)
 
 int		ft_get_my_ticket(t_map *map, char *str_cub, int index)
 {
-	int		pos;
-
-	pos = 0;
 	map->ticket = 0;
 	if (str_cub[index] == 'R')
 		map->ticket = R;
