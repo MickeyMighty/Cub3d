@@ -6,7 +6,7 @@
 /*   By: loamar <loamar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/09 23:43:14 by loamar            #+#    #+#             */
-/*   Updated: 2020/06/27 01:57:54 by lorenzoamar      ###   ########.fr       */
+/*   Updated: 2020/06/28 16:06:41 by lorenzoamar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 # include <unistd.h>
 # include "mlx.h"
 # include <fcntl.h>
+# include <sys/types.h>
+# include <sys/stat.h>
 # include <stdio.h>
 # include <limits.h>
 # include <math.h>
