@@ -6,7 +6,7 @@
 /*   By: loamar <loamar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/07 17:51:34 by loamar            #+#    #+#             */
-/*   Updated: 2020/06/27 01:57:44 by lorenzoamar      ###   ########.fr       */
+/*   Updated: 2020/06/28 17:27:43 by lorenzoamar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ int		check_arg(int argc, char **argv)
 {
 	if (argc == 0 || argc > 3 || argc == 1)
 		return (0);
-	else if ((ft_strncmp("-save", argv[1], 6) == 0)
-	&& str_end_check(argv[2], ".cub") != NULL && argc == 3)
+	else if ((ft_strncmp("--save", argv[2], 7) == 0)
+	&& str_end_check(argv[1], ".cub") != NULL && argc == 3)
 		return (2);
 	else if (str_end_check(argv[1], ".cub") && argc == 2)
 		return (1);

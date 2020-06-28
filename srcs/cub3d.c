@@ -6,7 +6,7 @@
 /*   By: loamar <loamar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/28 11:55:20 by loamar            #+#    #+#             */
-/*   Updated: 2020/06/27 01:58:15 by lorenzoamar      ###   ########.fr       */
+/*   Updated: 2020/06/28 17:33:39 by lorenzoamar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static int		screenshot(t_cub3d *cub)
 	if (ray_casting(cub) == 0)
 		ft_error(cub, "Raycasting.\n", 1);
 	draw_buffer(cub);
-	if ((fd = open("save.bmp", O_CREAT)) < 0)
+	if ((fd = open("save.bmp", O_CREAT | O_RDWR)) < 0)
 		ft_error(cub, "Bad screenshot.\n", 1);
 	close(fd);
 	if (cub->sprites)
