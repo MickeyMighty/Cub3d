@@ -6,7 +6,7 @@
 #    By: loamar <loamar@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/04 16:46:41 by loamar            #+#    #+#              #
-#    Updated: 2020/06/28 16:04:05 by lorenzoamar      ###   ########.fr        #
+#    Updated: 2020/06/28 17:46:32 by lorenzoamar      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC				= gcc
 
 RM				= rm -f
 
-CFLAGS			= -O3 -Wall -Wextra -Werror -I.
+CFLAGS			= -Wall -Wextra -Werror -I.
 
 LIBFT			=  lib/libft/libft.a
 
