@@ -6,7 +6,7 @@
 /*   By: loamar <loamar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 14:53:31 by loamar            #+#    #+#             */
-/*   Updated: 2020/06/15 20:27:15 by loamar           ###   ########.fr       */
+/*   Updated: 2020/06/30 11:55:52 by lorenzoamar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@
 
 int		key_press(int key, t_cub3d *cub)
 {
+	printf("key = %d\n", key);
 	if (key == KEY_UP || key == KEY_W)
 		cub->player->move_s = 1;
 	else if (key == KEY_DOWN || key == KEY_S)
