@@ -6,7 +6,7 @@
 /*   By: loamar <loamar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/05 16:56:26 by loamar            #+#    #+#             */
-/*   Updated: 2020/06/27 02:04:31 by lorenzoamar      ###   ########.fr       */
+/*   Updated: 2020/07/01 18:29:34 by loamar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,8 +114,10 @@ void		set_sprite(t_cub3d *cub, t_sprite *sprite, float inverse_coef)
 void		get_sprites(t_cub3d *cub, int column)
 {
 	t_sprite	*sprite2;
+	int			i;
 
 	sprite2 = cub->sprites;
+	i = 0;
 	while (sprite2)
 	{
 		if (cub->player->map_x == (int)sprite2->pos_x && cub->player->map_y ==

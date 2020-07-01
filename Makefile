@@ -6,11 +6,11 @@
 #    By: loamar <loamar@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/04 16:46:41 by loamar            #+#    #+#              #
-#    Updated: 2020/06/30 11:53:28 by lorenzoamar      ###   ########.fr        #
+#    Updated: 2020/06/16 13:37:52 by loamar           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 			= cub3d
+NAME 			= Cub3D
 
 CC				= gcc
 
@@ -22,7 +22,7 @@ LIBFT			=  lib/libft/libft.a
 
 LIB_LINUX		= -I/usr/local/include -L/usr/local/lib -lmlx -L/usr/include -lm -lbsd -lX11 -lXext
 LIB_MAC			= -I/usr/local/include -L/usr/local/lib -lmlx -framework OpenGL -framework AppKit
-LIBS			= $(LIB_LINUX)
+LIBS			= $(LIB_MAC)
 
 SRCS			= 	./srcs/cub3d.c \
 					./srcs/parsing/parsing_cub.c \

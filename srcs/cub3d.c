@@ -6,7 +6,7 @@
 /*   By: loamar <loamar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/28 11:55:20 by loamar            #+#    #+#             */
-/*   Updated: 2020/06/28 17:33:39 by lorenzoamar      ###   ########.fr       */
+/*   Updated: 2020/06/16 02:41:43 by loamar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static int		screenshot(t_cub3d *cub)
 	if (ray_casting(cub) == 0)
 		ft_error(cub, "Raycasting.\n", 1);
 	draw_buffer(cub);
-	if ((fd = open("save.bmp", O_CREAT | O_RDWR)) < 0)
+	if ((fd = open("save.bmp", O_CREAT)) < 0)
 		ft_error(cub, "Bad screenshot.\n", 1);
 	close(fd);
 	if (cub->sprites)
@@ -98,7 +98,7 @@ static int		ft_mlx(t_cub3d *cub)
 		return (screenshot(cub));
 	mlx_hook(cub->game->win_ptr, 2, 0, key_press, cub);
 	mlx_hook(cub->game->win_ptr, 3, 0, key_release, cub);
-	mlx_hook(cub->game->win_ptr, 17, 0, cub3d_exit, cub);
+	mlx_hook(cub->game->win_ptr, 17, 0, on_exit, cub);
 	mlx_loop_hook(cub->game->mlx_ptr, update_win, cub);
 	mlx_loop(cub->game->mlx_ptr);
 	return (1);

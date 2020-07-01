@@ -6,7 +6,7 @@
 /*   By: loamar <loamar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/09 23:43:14 by loamar            #+#    #+#             */
-/*   Updated: 2020/06/30 11:52:13 by lorenzoamar      ###   ########.fr       */
+/*   Updated: 2020/06/16 03:01:46 by loamar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,21 +41,23 @@
 ** MOVE
 */
 
-# define KEY_CTRL 65507
-# define KEY_UP 65362
-# define KEY_W 119
-# define KEY_DOWN 65364
-# define KEY_S 115
-# define KEY_LEFT 65361
-# define KEY_A 97
-# define KEY_RIGHT 65363
-# define KEY_D 100
+# define KEY_CTRL 256
+# define KEY_SHIFT 257
+# define KEY_UP 126
+# define KEY_W 13
+# define KEY_DOWN 125
+# define KEY_S 1
+# define KEY_LEFT 123
+# define KEY_A 0
+# define KEY_RIGHT 124
+# define KEY_D 2
 # define KEY_F 3
 # define KEY_G 5
-# define KEY_PLUS 65451
-# define KEY_ESC 65307
-# define KEY_E 101
-# define KEY_Q 113
+# define KEY_PLUS 69
+# define KEY_ESC 53
+# define KEY_E 14
+# define KEY_Q 12
+# define KEY_V 9
 
 /*
 ** TICKET MAP
@@ -416,7 +418,7 @@ int							detect_sprites(t_cub3d *cub);
 */
 
 int							check_arg(int argc, char **argv);
-int							cub3d_exit(t_cub3d *cub);
+int							on_exit(t_cub3d *cub);
 void						error_msg(int error, char *msg);
 
 /*
