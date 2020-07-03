@@ -6,7 +6,7 @@
 /*   By: loamar <loamar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/28 11:55:20 by loamar            #+#    #+#             */
-/*   Updated: 2020/06/16 02:41:43 by loamar           ###   ########.fr       */
+/*   Updated: 2020/07/02 16:12:07 by loamar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,13 +87,13 @@ static int		ft_mlx(t_cub3d *cub)
 	cub->game->mlx_ptr = mlx_init();
 	cub->game->win_ptr = mlx_new_window(cub->game->mlx_ptr,
 	cub->map->res_x, cub->map->res_y, "Cub3d");
-	if (!(get_text(cub)))
-		return (0);
 	cub->game->img_ptr = mlx_new_image(cub->game->mlx_ptr,
 	cub->map->res_x, cub->map->res_y);
 	cub->img->img_buf = (int*)mlx_get_data_addr(cub->game->img_ptr,
 	&(cub->game->bits_per_pixels),
 	&(cub->game->size_line), &(cub->game->endian));
+	if (!(get_text(cub)))
+		return (0);
 	if (cub->game->save == 1)
 		return (screenshot(cub));
 	mlx_hook(cub->game->win_ptr, 2, 0, key_press, cub);

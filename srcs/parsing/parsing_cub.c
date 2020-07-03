@@ -6,7 +6,7 @@
 /*   By: loamar <loamar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 15:26:19 by loamar            #+#    #+#             */
-/*   Updated: 2020/06/16 02:58:37 by loamar           ###   ########.fr       */
+/*   Updated: 2020/07/02 15:36:42 by loamar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ static char		*get_cub_string(char **argv, int index)
 	char	*str;
 	int		ret;
 
+	index = 1;
 	str = ft_strdup("\0");
 	fd = open(argv[index], O_RDONLY);
 	if (fd < 0 || !argv[1] || BUFFER_SIZE <= 0 || read(fd, buff, 0) < 0)
